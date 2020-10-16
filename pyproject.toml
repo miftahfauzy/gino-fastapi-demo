@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "gino-fastapi-demo"
+version = "0.1.0"
+description = ""
+authors = ["Miftah Fauzy <miftah.fauzy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+gino = {extras = ["starlette"], version = "^1.0.1"}
+fastapi = "^0.61.1"
+uvicorn = "^0.12.1"
+gunicorn = "^20.0.4"
+alembic = "^1.4.3"
+psycopg2 = "^2.8.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.1.1"
+requests = "^2.24.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."gino_fastapi_demo.modules"]
+"users" = "gino_fastapi_demo.views.users"
